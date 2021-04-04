@@ -2,6 +2,7 @@
     "name": "rizalmf/deductive-formula",
     "type": "library",
     "description": "Evaluate given math expressions",
+    "version": "0.0.1",
     "keywords": [
         "math expression",
         "formula",
