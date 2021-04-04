@@ -23,14 +23,17 @@ Example 1: (Define Expressions & Set Formula)
 ```php
 try {
     $expression = '{foo}^({bar}/2+(2+3^(1/2)))';
-    $requestedVariables = $this->formula->setFormula($expression);
+    $requestedVariables = $formula->setFormula($expression);
+    var_dump($formula->getFormula());
     var_dump($requestedVariables);
 
 } catch (FormulaException $e) {
     // handle Exceptions
 }
 
-// output : array ([0] => "foo", [1] => "bar")
+// output : 
+// {foo}^({bar}/2+(2+3^(1/2)))
+// array ([0] => "foo", [1] => "bar")
 ```
 
 Example 2: (Set Variables)
@@ -79,10 +82,13 @@ Example 5: (Set Limit Iteration & Debug)
     // (optional) set limit iteration calculating machine. default 200
     $formula->setLimit(50);
 
+    // show prepared formula
+    var_dump($formula->getFormulaExposed());
+    // output : 4^(1/2+(2+3^(1/2)))
+
     // debug
     $result = $this->formula->execute(true);
     var_dump($result);
-
     // output : 
     // iteration-1 => 4^(1/2+(2+3^(1/2)))
     // iteration-2 => 4^(1/2+(2+3^0.50))
