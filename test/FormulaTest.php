@@ -26,7 +26,7 @@ final class FormulaTest extends TestCase
         );
     }
 
-    public function testCannotParsingFormula(): void
+    public function testCannotParsingFormula()
     {
         $this->expectException(BadFormulaException::class);
         $this->formula->setFormula('((2/2)');
