@@ -7,7 +7,9 @@
         "math expression",
         "formula",
         "deductive",
-        "calculate"],
+        "calculate",
+        "evaluate"
+    ],
     "homepage": "https://github.com/rizalmf",
     "license": "MIT",
     "authors": [
