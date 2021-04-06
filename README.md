@@ -41,11 +41,11 @@ Example 2: (Set Variables)
     // ...
 
     // 1. define value per variable
-    $this->formula->setVariable("foo", 4);
-    $this->formula->setVariable("bar", 1);
+    $formula->setVariable("foo", 4);
+    $formula->setVariable("bar", 1);
 
     // 2. use array
-    $this->formula->setVariables([
+    $formula->setVariables([
         "foo" => 4,
         "bar" => 1
     ]);
@@ -56,22 +56,22 @@ Example 3: (Get Variables)
     // ...
 
     // 1. get value from specific variable
-    var_dump($this->formula->getVariable("foo"));
+    var_dump($formula->getVariable("foo"));
     // output : 4
 
     // 2. get values all variables
-    var_dump($this->formula->getVariables());
+    var_dump($formula->getVariables());
     // output : array ([foo] => 4, [bar] => 1)
 
     // 1. get possible variables from Formula
-    var_dump($this->formula->getRequestedVariables());
+    var_dump($formula->getRequestedVariables());
     // output : array ([0] => "foo", [1] => "bar")
 
 ```
 
 Example 4: (Evaluate)
 ```php
-    $result = $this->formula->execute();
+    $result = $formula->execute();
     var_dump($result);
 
     // output : 353.141268350837
@@ -87,7 +87,7 @@ Example 5: (Set Limit Iteration & Debug)
     // output : 4^(1/2+(2+3^(1/2)))
 
     // debug
-    $result = $this->formula->execute(true);
+    $result = $formula->execute(true);
     var_dump($result);
     // output : 
     // iteration-1 => 4^(1/2+(2+3^(1/2)))
